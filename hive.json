@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "branch": "main",
+  "scopes": {
+    "org": "org",
+    "team": "teams/{team}",
+    "project": "projects/{project}"
+  },
+  "skillFile": "SKILL.md",
+  "proposals": "pull-request"
+}
