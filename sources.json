@@ -1,0 +1,222 @@
+{
+  "$comment": "Upstream of every skill in library/. scripts/update-skills.mjs reads this file; bump `commit` and `fetched` to update a source. `defaultOn` marks the skills the hub turns on for new organizations.",
+  "repos": {
+    "anthropics/skills": {
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "fetched": "2026-10-14",
+      "stars": 180878
+    },
+    "vercel-labs/agent-skills": {
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "fetched": "2026-10-14",
+      "stars": 32353,
+      "licenseNote": "MIT per the 'License' section of README.md; upstream ships no LICENSE file, so LICENSE here is our copy of the MIT terms.",
+      "licenseCopy": "licenses/vercel-labs-agent-skills.LICENSE"
+    },
+    "vercel-labs/web-interface-guidelines": {
+      "commit": "434b7f91364665f2f733b310ec54809bf8f37937",
+      "fetched": "2026-10-14",
+      "stars": 970,
+      "licenseFiles": ["LICENSE"]
+    },
+    "obra/superpowers": {
+      "commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "fetched": "2026-10-14",
+      "stars": 298549,
+      "licenseFiles": ["LICENSE"]
+    },
+    "nextlevelbuilder/ui-ux-pro-max-skill": {
+      "commit": "7246805992a42b7bba37d4cac83b01416f0c6c44",
+      "fetched": "2026-10-14",
+      "stars": 135433,
+      "licenseFiles": ["LICENSE"]
+    },
+    "shadcn-ui/ui": {
+      "commit": "30a58d4498f270af1c1e981a7d78a15cf5740841",
+      "fetched": "2026-10-14",
+      "stars": 125505,
+      "licenseFiles": ["LICENSE.md"]
+    },
+    "trailofbits/skills": {
+      "commit": "8e54050ae63c2f62224c35b1616efe71865b4777",
+      "fetched": "2026-10-14",
+      "stars": 7507,
+      "licenseFiles": ["LICENSE"]
+    },
+    "github/spec-kit": {
+      "commit": "0282d03eb6fc3091b3deaa3a855d4030dc40cd6c",
+      "fetched": "2026-10-14",
+      "stars": 141091,
+      "licenseFiles": ["LICENSE"]
+    }
+  },
+  "skills": [
+    {
+      "name": "ui-ux-pro-max", "defaultOn": true,
+      "group": "ui",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": ".claude/skills/ui-ux-pro-max",
+      "license": "MIT",
+      "exclude": ["__pycache__", "*.pyc", ".coverage"]
+    },
+    {
+      "name": "ui-styling",
+      "group": "ui",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": ".claude/skills/ui-styling",
+      "license": "MIT AND Apache-2.0",
+      "exclude": ["__pycache__", "*.pyc", ".coverage", "canvas-fonts"],
+      "note": "The folder ships its own Apache-2.0 LICENSE.txt inside an MIT repository; both files are kept. canvas-fonts/ (OFL font binaries) is left out."
+    },
+    {
+      "name": "design-system",
+      "group": "ui",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": ".claude/skills/design-system",
+      "license": "MIT",
+      "exclude": ["__pycache__", "*.pyc", ".coverage"]
+    },
+    {
+      "name": "frontend-design",
+      "group": "ui",
+      "repo": "anthropics/skills",
+      "path": "skills/frontend-design",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "web-design-guidelines", "defaultOn": true,
+      "group": "ui",
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/web-design-guidelines",
+      "license": "MIT",
+      "extra": [{ "repo": "vercel-labs/web-interface-guidelines", "path": "command.md", "to": "command.md" }],
+      "patch": "patches/web-design-guidelines.patch",
+      "note": "Adds a snapshot of the guidelines (command.md, MIT) and one line telling the agent to read it when it cannot fetch the URL, because Hive runs may have no network."
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "group": "ui",
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/react-best-practices",
+      "license": "MIT",
+      "note": "Folder renamed to the `name` in SKILL.md."
+    },
+    {
+      "name": "vercel-composition-patterns",
+      "group": "ui",
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/composition-patterns",
+      "license": "MIT",
+      "note": "Folder renamed to the `name` in SKILL.md."
+    },
+    {
+      "name": "shadcn",
+      "group": "ui",
+      "repo": "shadcn-ui/ui",
+      "path": "skills/shadcn",
+      "license": "MIT",
+      "exclude": ["evals", "agents", "*.png"],
+      "note": "Leaves out evals/, agents/ (OpenAI agent card) and the README images."
+    },
+    {
+      "name": "test-driven-development", "defaultOn": true,
+      "group": "engineering",
+      "repo": "obra/superpowers",
+      "path": "skills/test-driven-development",
+      "license": "MIT"
+    },
+    {
+      "name": "systematic-debugging", "defaultOn": true,
+      "group": "engineering",
+      "repo": "obra/superpowers",
+      "path": "skills/systematic-debugging",
+      "license": "MIT",
+      "exclude": ["CREATION-LOG.md", "test-academic.md", "test-pressure-1.md", "test-pressure-2.md", "test-pressure-3.md"],
+      "note": "Leaves out the authoring log and the pressure-test prompts used to develop the skill."
+    },
+    {
+      "name": "verification-before-completion", "defaultOn": true,
+      "group": "engineering",
+      "repo": "obra/superpowers",
+      "path": "skills/verification-before-completion",
+      "license": "MIT"
+    },
+    {
+      "name": "brainstorming",
+      "group": "engineering",
+      "repo": "obra/superpowers",
+      "path": "skills/brainstorming",
+      "license": "MIT",
+      "note": "Asks the user questions; useful in chat with the project leader, not in unattended runs."
+    },
+    {
+      "name": "writing-plans",
+      "group": "engineering",
+      "repo": "obra/superpowers",
+      "path": "skills/writing-plans",
+      "license": "MIT"
+    },
+    {
+      "name": "requesting-code-review",
+      "group": "engineering",
+      "repo": "obra/superpowers",
+      "path": "skills/requesting-code-review",
+      "license": "MIT"
+    },
+    {
+      "name": "receiving-code-review",
+      "group": "engineering",
+      "repo": "obra/superpowers",
+      "path": "skills/receiving-code-review",
+      "license": "MIT"
+    },
+    {
+      "name": "webapp-testing",
+      "group": "testing",
+      "repo": "anthropics/skills",
+      "path": "skills/webapp-testing",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "differential-review",
+      "group": "security",
+      "repo": "trailofbits/skills",
+      "path": "plugins/differential-review/skills/differential-review",
+      "license": "CC-BY-SA-4.0",
+      "note": "Text licensed CC BY-SA 4.0 by Trail of Bits. Keep the attribution; changes to these files must stay CC BY-SA 4.0."
+    },
+    {
+      "name": "sharp-edges",
+      "group": "security",
+      "repo": "trailofbits/skills",
+      "path": "plugins/sharp-edges/skills/sharp-edges",
+      "license": "CC-BY-SA-4.0",
+      "note": "Text licensed CC BY-SA 4.0 by Trail of Bits. Keep the attribution; changes to these files must stay CC BY-SA 4.0."
+    },
+    {
+      "name": "mcp-builder",
+      "group": "tools",
+      "repo": "anthropics/skills",
+      "path": "skills/mcp-builder",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skill-creator",
+      "group": "tools",
+      "repo": "anthropics/skills",
+      "path": "skills/skill-creator",
+      "license": "Apache-2.0"
+    },
+    { "name": "speckit-constitution", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "speckit-specify", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "speckit-clarify", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "speckit-plan", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "speckit-tasks", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "speckit-analyze", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "speckit-checklist", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "speckit-implement", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "speckit-converge", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
+    { "name": "hive-run-etiquette", "defaultOn": true, "group": "hive", "own": true, "license": "MIT" },
+    { "name": "vietnamese-ui-copy", "defaultOn": true, "group": "hive", "own": true, "license": "MIT" }
+  ]
+}
