@@ -1,0 +1,11 @@
+--- a/SKILL.md
++++ b/SKILL.md
+@@ -28,6 +28,8 @@
+ 
+ Use WebFetch to retrieve the latest rules. The fetched content contains all the rules and output format instructions.
+ 
++If you cannot fetch the URL (no network or no WebFetch tool), read `command.md` in this skill's folder instead: it is a snapshot of the same file.
++
+ ## Usage
+ 
+ When a user provides a file or pattern argument:
