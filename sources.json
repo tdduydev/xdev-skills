@@ -217,6 +217,7 @@
     { "name": "speckit-implement", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
     { "name": "speckit-converge", "group": "sdlc", "repo": "github/spec-kit", "generated": true, "license": "MIT" },
     { "name": "hive-run-etiquette", "defaultOn": true, "group": "hive", "own": true, "license": "MIT" },
-    { "name": "vietnamese-ui-copy", "defaultOn": true, "group": "hive", "own": true, "license": "MIT" }
+    { "name": "vietnamese-ui-copy", "defaultOn": true, "group": "hive", "own": true, "license": "MIT" },
+    { "name": "product-owner", "group": "engineering", "own": true, "license": "MIT" }
   ]
 }
