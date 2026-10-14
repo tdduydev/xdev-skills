@@ -63,6 +63,7 @@ over the default with the same name.
 | `requesting-code-review` | | Finishing a larger change and asking for a focused review. |
 | `receiving-code-review` | | Acting on review comments: verify each one before changing code. |
 | `brainstorming` | | Shaping an idea with a person before planning. Asks questions, so use it in chat, not unattended runs. |
+| `product-owner` | | Designing a feature before code: one-page PRD, story map with MVP cut, RICE/MoSCoW, UAT review. Asks in chat or records assumptions unattended; feeds `speckit-specify`. |
 
 ### Testing
 
